@@ -2,14 +2,16 @@
 
 function task1($array,$true=false)
 {
+    $result='';
     if ($true==false) {
         foreach ($array as $item) {
             echo "<p>" . $item . "</p>";
         }
     } else {
         foreach ($array as $item) {
-            echo $item;
+            $result .= $item;
         }
+        return $result;
     }
 };
 
@@ -56,3 +58,43 @@ function task3($arg1,$arg2){
     }
 }
 
+function task4(){
+    echo date("d.m.Y H:i");
+}
+
+function task5(){
+    echo date('d.m.Y H:i', mktime(0, 0, 0, 2, 24, 2016));
+}
+
+function task6(){
+    $string="Карл у Клары украл Кораллы";
+    $pattern="К";
+    $replacement="";
+    $result=str_replace($pattern,$replacement,$string);
+
+    echo $result;
+}
+
+function task7(){
+    $string="Две бутылки лимонада";
+    $pattern="Две";
+    $replacement="Три";
+    $result=str_replace($pattern,$replacement,$string);
+
+    echo $result;
+}
+
+function task8(){
+    $text = "Hello again!";
+    $handle = fopen("test.txt", "w");
+    fwrite($handle, $text);
+    fclose($handle);
+}
+
+function task9($filename){
+    $handle = fopen($filename, "r");
+    $content = fread($handle, filesize($filename));
+
+    echo $content;
+    fclose($handle);
+}
