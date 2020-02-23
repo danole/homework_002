@@ -34,3 +34,25 @@ function task2($operation)
 
 }
 
+function task3($arg1,$arg2){
+
+    if (is_int($arg1) && is_int($arg2)) {
+        ?>
+        <table style='border: 1px solid black'>
+            <?php for ($i = 1; $i <= $arg1; $i++): ?>
+                <tr style='border: 1px solid black'>
+                    <?php for ($j = 1; $j <= $arg2; $j++): ?>
+                        <td style='border: 1px solid black'>
+                            <?php echo $i * $j; ?>
+                        </td>
+                    <?php endfor; ?>
+                </tr>
+                <br>
+            <?php endfor; ?>
+        </table>
+        <?php
+    } else{
+        echo "Вы ввели не число или не целое число";
+    }
+}
+
