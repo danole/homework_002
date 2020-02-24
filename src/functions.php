@@ -55,8 +55,7 @@ function task3($arg1,$arg2)
                         </td>
                     <?php endfor; ?>
                 </tr>
-                <br>
-            <?php endfor; ?>
+             <?php endfor; ?>
         </table>
         <?php
     }
