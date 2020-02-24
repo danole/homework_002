@@ -22,7 +22,8 @@ function task2($operation)
 
     for ($i = 2; $i < count($args);$i++) {
         if ($args[$i]==0 && $operation=='/'){
-            echo "На ноль делить нельзя,поэтому возмем следующее число<br>";
+            $result= "На ноль делить нельзя.<br>";
+            break;
         }else {
             if ($operation == '+') {
                 $result += $args[$i];
