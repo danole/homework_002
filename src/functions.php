@@ -21,14 +21,18 @@ function task2($operation)
     $result=$args[1];
 
     for ($i = 2; $i < count($args);$i++) {
-        if ($operation=='+'){
-            $result += $args[$i];
-        } else if ($operation=='-'){
-            $result -= $args[$i];
-        } else if ($operation=='*'){
-            $result *= $args[$i];
-        } else if ($operation=='/'){
-            $result /= $args[$i];
+        if ($args[$i]==0 && $operation=='/'){
+            echo "На ноль делить нельзя,поэтому возмем следующее число<br>";
+        }else {
+            if ($operation == '+') {
+                $result += $args[$i];
+            } else if ($operation == '-') {
+                $result -= $args[$i];
+            } else if ($operation == '*') {
+                $result *= $args[$i];
+            } else if ($operation == '/') {
+                $result /= $args[$i];
+            }
         }
     }
 
@@ -36,9 +40,11 @@ function task2($operation)
 
 }
 
-function task3($arg1,$arg2){
-
-    if (is_int($arg1) && is_int($arg2)) {
+function task3($arg1,$arg2)
+{
+    if (!is_int($arg1)||!is_int($arg2)){
+        echo "Нужно ввести целые числа";
+    } else {
         ?>
         <table style='border: 1px solid black'>
             <?php for ($i = 1; $i <= $arg1; $i++): ?>
@@ -53,20 +59,21 @@ function task3($arg1,$arg2){
             <?php endfor; ?>
         </table>
         <?php
-    } else{
-        echo "Вы ввели не число или не целое число";
     }
 }
 
-function task4(){
+function task4()
+{
     echo date("d.m.Y H:i");
 }
 
-function task5(){
+function task5()
+{
     echo date('d.m.Y H:i', mktime(0, 0, 0, 2, 24, 2016));
 }
 
-function task6(){
+function task6()
+{
     $string="Карл у Клары украл Кораллы";
     $pattern="К";
     $replacement="";
@@ -75,7 +82,8 @@ function task6(){
     echo $result;
 }
 
-function task7(){
+function task7()
+{
     $string="Две бутылки лимонада";
     $pattern="Две";
     $replacement="Три";
@@ -84,14 +92,16 @@ function task7(){
     echo $result;
 }
 
-function task8(){
+function task8()
+{
     $text = "Hello again!";
     $handle = fopen("test.txt", "w");
     fwrite($handle, $text);
     fclose($handle);
 }
 
-function task9($filename){
+function task9($filename)
+{
     $handle = fopen($filename, "r");
     $content = fread($handle, filesize($filename));
 

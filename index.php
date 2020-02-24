@@ -10,9 +10,9 @@ $foo=[
 
 task1($foo,false);
 ?> <br> <?php
-task2("/",9,3);
+task2("/",27,3,0,3,3);
 ?> <br> <?php
-task3(2,7);
+task3(10,"sdfsdf");
 ?> <br> <?php
 task4();
 ?> <br> <?php
