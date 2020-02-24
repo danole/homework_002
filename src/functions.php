@@ -45,6 +45,8 @@ function task3($arg1,$arg2)
 {
     if (!is_int($arg1)||!is_int($arg2)){
         echo "Нужно ввести целые числа";
+    } elseif ($arg1<1 || $arg2<1){
+        echo "Числа должны быть больше 0";
     } else {
         ?>
         <table style='border: 1px solid black'>
